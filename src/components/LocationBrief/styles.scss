@@ -1,0 +1,211 @@
+.LocBrief-wrapper {
+    position: relative;
+
+    height: 100vh;
+    width: 100%;
+
+    background-color: #000;
+}
+
+.LocBrief-sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    height: 100%;
+    width: 100%;
+
+    background-color: #fff;
+
+    transition: 2s;
+    /* transition-timing-function: cubic-bezier(1, 0, 0, 1); */
+
+    z-index: 2;
+
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+    }
+
+    &.ready {
+        width: 400px;
+
+        & .LocBrief-sidebar-banner {
+            height: 180px;
+
+            & > span {
+                left: 0;
+                transform: translate(-10%, -50%) scale(.6);
+                /* font-size: 34px; */
+                /* width: 80%; */
+
+                & > span {
+                    bottom: -40px;
+                    font-size: 25px;
+                }
+            }
+        }
+
+        & .LocBrief-info-panel {
+            position: relative;
+            opacity: 1;
+        }
+
+        & .LocBrief-loading-anim {
+            opacity: 0;
+        }
+
+        & .LocBrief-sidebar-desc {
+            opacity: 1;
+        }
+
+
+        /* & .LocBrief-loading-text {
+            opacity: 0 !important;
+        } */
+    }
+
+    & > .LocBrief-loading-anim {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        margin: 50px 80px;
+    }
+
+    & > .LocBrief-sidebar-banner {
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        transition: 1.5s;
+
+        & > span {
+            position: absolute;
+            left: 50%;
+            top: 35%;
+            transform: translate(-50%, -50%) scale(1);
+
+            font-size: 60px;
+            width: 500px;
+            height: fit-content;
+
+            color: #00A9A1;
+
+            transition: 3s;
+
+            & > .LocBrief-loading-text {
+                position: absolute;
+                left: 0;
+                bottom: -40px;
+
+                font-size: 25px;
+                color: #AFAFAF;
+
+                opacity: 1;
+
+                transition: 3s;
+
+                font-size: 18px;
+            }
+        }
+    }
+
+    & > .LocBrief-sidebar-desc {
+        position: relative;
+
+        height: fit-content;
+        width: 80%;
+
+        margin: 0 auto;
+
+        text-align: justify;
+
+        font-size: 18px;
+        color: gray;
+
+        opacity: 0;
+
+        transition: 1s;
+        transition-delay: 2s;
+    }
+
+    & > .LocBrief-info-panel {
+        position: relative;
+
+        height: calc(100% - 150px);
+        width: 280px;
+
+        margin: 0 auto;
+
+        padding: 15% 0;
+
+        opacity: 0;
+
+        transition: 1.3s;
+        /* transition-delay: 1s; */
+
+        & > .LocBrief-info-panel-wrapper {
+            position: relative;
+
+            height: 100%;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: space-evenly;
+
+            & > .LocBrief-info-item {
+                height: fit-content;
+                width: 100%;
+
+                font-size: 20px;
+
+                & > .LocBrief-info-label {
+                    display: flex;
+
+                    color: #a1a1a1;
+
+                    & > .LocBrief-info-icon {
+                        padding-right: 10px;
+                    }
+                }
+
+                & > .LocBrief-info-value {
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+.LocBrief-video-stream {
+    position: relative;
+    
+    height: 100%;
+    width: calc(100% - 450px);
+
+    margin-left: 350px;
+    
+    background-color: black;
+
+    object-fit: cover;
+
+    z-index: 1;
+}
+
+.LocBrief-loading {
+    height: fit-content;
+    width: fit-content;
+
+    padding: 30px 50px;
+
+    background-color: #fff;
+}
